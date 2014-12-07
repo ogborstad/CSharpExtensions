@@ -49,7 +49,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EnumUtilities\Extensions.csproj">
+    <ProjectReference Include="..\CSharpExtensions\Extensions.csproj">
       <Project>{16d0715d-c54f-44f4-915d-e5d51abd4177}</Project>
       <Name>Extensions</Name>
     </ProjectReference>

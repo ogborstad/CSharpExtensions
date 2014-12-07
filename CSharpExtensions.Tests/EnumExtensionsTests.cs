@@ -42,6 +42,18 @@ namespace EnumUtilities.Tests
             Assert.That(enumerable.First(), Is.EqualTo(FlagWithZeroEnum.None));
         }
 
+        [Test]
+        public void GetFlagsForEnumWithZeroValue_ZeroAndValue_ReturnsBothZeroAndValue()
+        {
+            const FlagWithZeroEnum sampleEnum = FlagWithZeroEnum.ValueOne;
+            var flags = sampleEnum.GetFlags();
+
+            var enumerable = flags as IList<Enum> ?? flags.ToList();
+            Assert.That(enumerable.Count(), Is.EqualTo(2));
+            Assert.That(enumerable.Contains(FlagWithZeroEnum.None));
+            Assert.That(enumerable.Contains(FlagWithZeroEnum.ValueOne));
+        }
+
     }
 
     [Flags]
